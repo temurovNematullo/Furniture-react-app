@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Furniture-react-app/static/css/main.9cd98854.css",
-    "main.js": "/Furniture-react-app/static/js/main.331c6fd4.js",
+    "main.js": "/Furniture-react-app/static/js/main.fe68f9b2.js",
     "static/js/453.ed3810f9.chunk.js": "/Furniture-react-app/static/js/453.ed3810f9.chunk.js",
     "static/media/Mask_Group.svg": "/Furniture-react-app/static/media/Mask_Group.9be01fb2180aa2cbda62.svg",
     "static/media/aboutUsImg.svg": "/Furniture-react-app/static/media/aboutUsImg.4455b0c93448e5c250186b3a6568e44e.svg",
@@ -13,8 +13,10 @@
     "static/media/RobotoCondensed-Regular.woff2": "/Furniture-react-app/static/media/RobotoCondensed-Regular.82f7c6274829d972d323.woff2",
     "static/media/Revalia-Regular.woff2": "/Furniture-react-app/static/media/Revalia-Regular.12eec8bf8f01652dffd4.woff2",
     "static/media/ABeeZee-Regular.woff2": "/Furniture-react-app/static/media/ABeeZee-Regular.e12e0a8227aca0672544.woff2",
+    "static/media/phone.svg": "/Furniture-react-app/static/media/phone.4209a6dc3babe23f92e875bb85db347a.svg",
     "static/media/saaave.svg": "/Furniture-react-app/static/media/saaave.d5c5f0030410c93304a89d5d612b4bd5.svg",
     "static/media/instageam.svg": "/Furniture-react-app/static/media/instageam.d2e9917e317756fc03df27f9cddf604c.svg",
+    "static/media/email.svg": "/Furniture-react-app/static/media/email.50f00450f4830e89ef8b283d57fdfca6.svg",
     "static/media/delevary.svg": "/Furniture-react-app/static/media/delevary.e681db926387ccbd3451b082a2dfa6c4.svg",
     "static/media/twitter.svg": "/Furniture-react-app/static/media/twitter.d1f5029326aa3bf442a515961d83cac7.svg",
     "index.html": "/Furniture-react-app/index.html",
@@ -24,11 +26,11 @@
     "static/media/facebook.svg": "/Furniture-react-app/static/media/facebook.85de8d444268ce3162850378b2f5f255.svg",
     "static/media/Group 22.svg": "/Furniture-react-app/static/media/Group 22.e94584b6e2f012f025fdcad4c1cce5a6.svg",
     "main.9cd98854.css.map": "/Furniture-react-app/static/css/main.9cd98854.css.map",
-    "main.331c6fd4.js.map": "/Furniture-react-app/static/js/main.331c6fd4.js.map",
+    "main.fe68f9b2.js.map": "/Furniture-react-app/static/js/main.fe68f9b2.js.map",
     "453.ed3810f9.chunk.js.map": "/Furniture-react-app/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9cd98854.css",
-    "static/js/main.331c6fd4.js"
+    "static/js/main.fe68f9b2.js"
   ]
 }
