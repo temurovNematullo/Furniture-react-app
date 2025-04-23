@@ -1,0 +1,65 @@
+@use "../mixins" as *;
+
+.Reviews__Conteiner {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.client__Reviews {
+  padding-top: var(--section-padding-y);
+  &-title {
+    @include flex-center(true);
+    column-gap: 10px;
+    margin-bottom: 45px;
+  }
+  &-lineTitle {
+    @include line-title;
+  }
+
+  &-content {
+    width: 600px;
+    height: 235px;
+    background-color: var(--color-light-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    padding: 10px;
+  }
+
+  &-textContainer {
+    display: flex;
+    column-gap: 20px;
+  }
+  &-Avatar {
+    width: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+
+  &-starsContainer {
+    display: flex;
+    column-gap: 10px;
+  }
+}
+
+.client__Reviews-Info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.client__Reviews-textContainer-title {
+  font-family: var(--font-family-alt);
+  font-size: 16px;
+}
+.reviews__prevButton {
+  @include reviewsButton(right, 0%);
+  inset-block: 50%;
+  transform: translateY(-50%);
+}
+
+.reviews__nextButton {
+  @include reviewsButton(left, 0%);
+  inset-block: 50%;
+  transform: translateY(-50%);
+}

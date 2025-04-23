@@ -1,0 +1,14 @@
+@use "mixins";
+@use "media";
+@use "normalize";
+@use "variables";
+@use "globals";
+@use "utils";
+@use "fonts";
+@use "./blocks/header";
+@use "./blocks/mainSection";
+@use "./blocks/sectionAboutUs.scss";
+@use "./blocks/sectionServices";
+@use "./blocks/furniture";
+@use "./blocks/clientReviews";
+@use "./blocks/footerPositivus";

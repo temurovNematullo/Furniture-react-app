@@ -1,0 +1,53 @@
+@use "../mixins" as *;
+
+.conteiner__AboutUs {
+  padding-top: var(--section-padding-y);
+
+  &-title {
+    padding-left: var(--section-padding-y);
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 30px;
+    padding-top: 45px;
+  }
+
+  &-img {
+    width: 40%; // или сколько тебе нужно
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &-textContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1; // позволяет блоку растягиваться
+    min-height: 0; // чтобы margin-auto сработал
+    padding-left: 20px;
+    padding-right: var(--container-padding-x);
+  }
+
+  &-textContainer-title {
+    p {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-imgContainer {
+    margin-top: auto; // прижимает блок вниз
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-button {
+    @include mainButton;
+    margin-top: 40px;
+  }
+}

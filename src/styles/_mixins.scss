@@ -1,0 +1,95 @@
+@use "./media" as *;
+
+// Миксин для создания адаптивного размера текста с использованием clamp()
+@mixin fluid-text($max: 48, $min: 16) {
+  font-size: clamp(#{$min}px, #{$max / 1440 * 100}vw, #{$max}px);
+}
+
+// Миксин для сброса стилей ссылки
+@mixin reset-link {
+  color: inherit;
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Миксин для сброса стилей кнопки
+@mixin reset-button {
+  background-color: transparent;
+  border: none;
+}
+
+// Миксин для центрирования элементов с использованием flexbox
+@mixin flex-center($isInLine: false) {
+  @if $isInLine {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+// Миксин для абсолютного центрирования элемента
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Миксин для создания квадратного элемента с заданным размером
+@mixin square($size) {
+  width: $size;
+  aspect-ratio: 1;
+}
+
+@mixin mainButton {
+  @include reset-button;
+  @include hover {
+    background-color: var(--color-gray);
+  }
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  height: var(--input-height);
+  border-radius: var(--border-radius);
+}
+
+@mixin reset-input {
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin line-title {
+  width: 70px;
+  height: 1.5px;
+  background: var(--color-black);
+}
+
+@mixin reviewsButton($side, $value) {
+  @include reset-button;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(55, 55, 55, 0.5);
+  -webkit-backdrop-filter: blur(0.5px);
+  backdrop-filter: blur(0.5px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-light);
+  #{$side}: $value;
+}
+
+@mixin contactsIconContainer {
+  @include flex-center(true);
+  width: 35px;
+  height: 35px;
+  background-color: var(--color-light);
+  border-radius: 50%;
+}

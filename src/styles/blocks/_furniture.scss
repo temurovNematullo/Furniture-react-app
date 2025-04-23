@@ -1,0 +1,122 @@
+@use "../mixins" as *;
+@use "../media" as *;
+
+.Furniture {
+  padding-top: var(--section-padding-y);
+}
+.firnitureText_Box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 45px;
+}
+.SortList__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 55px;
+  padding-top: 45px;
+
+  &-search {
+    @include flex-center(true);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--color-light-gray-alt);
+
+    &:focus-within {
+      box-shadow: 0 0 0 5px var(--color-light-gray);
+    }
+  }
+
+  &-search input {
+    @include reset-input;
+    font-size: 20px;
+    padding-inline: 10px;
+    background-color: transparent;
+    color: var(--color-gray);
+  }
+
+  &-button {
+    @include reset-button;
+    @include hover {
+      background-color: var(--color-gray);
+    }
+    @include flex-center(true);
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-black);
+    border-radius: var(--border-radius);
+  }
+
+  &-nav {
+    @include flex-center(true);
+    column-gap: 30px;
+  }
+}
+
+.cardConteiner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 30px;
+  row-gap: 30px;
+
+  &-cardProduct {
+    width: 270px;
+    height: auto;
+    padding: 10px;
+    background-color: var(--color-light-gray);
+    border-radius: var(--border-radius);
+  }
+
+  .cardProduct_img {
+    @include flex-center(false);
+    max-width: 300px;
+    max-height: 200px;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+
+  .cardProduct_Info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    padding-top: 10px;
+  }
+
+  .cardProduct_text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .cardProduct_text span {
+    color: var(--color-dark-alt);
+  }
+
+  .cardProduct_button {
+    @include reset-button;
+    @include mainButton;
+    width: 50%;
+    @include hover {
+      background-color: var(--color-gray);
+      color: var(--color-light);
+    }
+  }
+}
+
+.view__Conteiner {
+  @include flex-center(false);
+  padding-top: 50px;
+  &-button {
+    @include reset-button;
+    @include mainButton;
+    @include hover {
+      background-color: var(--color-gray);
+      color: var(--color-light);
+    }
+  }
+}

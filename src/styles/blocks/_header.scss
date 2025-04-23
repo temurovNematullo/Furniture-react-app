@@ -1,0 +1,32 @@
+@use "../mixins" as *;
+@use "../media" as *;
+
+.header__menu {
+  @include flex-center(true);
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &-list {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 35px;
+  }
+  &-button {
+    @include reset-button;
+    @include hover {
+      background-color: var(--color-gray);
+    }
+    margin-inline: 35px;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    height: var(--input-height);
+    border-radius: var(--border-radius);
+  }
+  &-search {
+    @include reset-button;
+  }
+}

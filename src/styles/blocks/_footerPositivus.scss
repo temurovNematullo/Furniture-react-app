@@ -1,0 +1,86 @@
+@use "../mixins" as *;
+
+.footerPositivus {
+  padding-top: var(--section-padding-y);
+}
+
+.footerPositivus__container {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 150px;
+  &-icons {
+    @include flex-center(true);
+    column-gap: 20px;
+    padding-top: 20px;
+  }
+}
+.emailConteiner {
+  @include contactsIconContainer;
+
+  & img {
+    width: 30px;
+    height: 15px;
+  }
+}
+
+.phoneContainer {
+  @include contactsIconContainer;
+
+  & img {
+    width: 30px;
+    height: 15px;
+  }
+}
+.footerPositivus-contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  row-gap: 10px;
+  &-email {
+    @include flex-center(true);
+    column-gap: 10px;
+  }
+  &-phone {
+    @include flex-center(true);
+    column-gap: 10px;
+  }
+}
+.footerPositivus__dataList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.footerPositivus__newsletter {
+  padding-bottom: 30px;
+
+  &-input {
+    @include reset-input;
+    height: var(--input-height);
+    width: 170px;
+    border-radius: 5px;
+    padding-left: 10px;
+    background-color: var(--color-light-gray-alt);
+    color: var(--color-black);
+  }
+  &-button {
+    @include reset-button;
+    height: var(--button-height);
+    background-color: var(--color-light);
+    border-radius: 5px;
+  }
+}
+
+.footer__downloadApp {
+  &-button {
+    @include reset-button;
+    background-color: var(--color-light);
+    color: var(--color-black);
+    width: 170px;
+    height: var(--button-height);
+    border-radius: 5px;
+  }
+}
