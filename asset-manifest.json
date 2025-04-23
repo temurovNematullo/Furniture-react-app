@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/Furniture-react-app/static/css/main.9cd98854.css",
+    "main.js": "/Furniture-react-app/static/js/main.331c6fd4.js",
+    "static/js/453.ed3810f9.chunk.js": "/Furniture-react-app/static/js/453.ed3810f9.chunk.js",
+    "static/media/Mask_Group.svg": "/Furniture-react-app/static/media/Mask_Group.9be01fb2180aa2cbda62.svg",
+    "static/media/aboutUsImg.svg": "/Furniture-react-app/static/media/aboutUsImg.4455b0c93448e5c250186b3a6568e44e.svg",
+    "static/media/Alibaba_logo_PNG4 1.svg": "/Furniture-react-app/static/media/Alibaba_logo_PNG4 1.9ed14e57062903b41f31d3aad0a832cd.svg",
+    "static/media/RobotoCondensed-Bold.woff2": "/Furniture-react-app/static/media/RobotoCondensed-Bold.82520aaa568a69ebf412.woff2",
+    "static/media/RobotoCondensed-Medium.woff2": "/Furniture-react-app/static/media/RobotoCondensed-Medium.e917c55fa28094a8ef8e.woff2",
+    "static/media/Amazon_logo_PNG3 1.svg": "/Furniture-react-app/static/media/Amazon_logo_PNG3 1.3f2f14b9065149e896cc09a95c608ee0.svg",
+    "static/media/RobotoCondensed-Light.woff2": "/Furniture-react-app/static/media/RobotoCondensed-Light.6a2fe5af922854cf3d70.woff2",
+    "static/media/RobotoCondensed-Regular.woff2": "/Furniture-react-app/static/media/RobotoCondensed-Regular.82f7c6274829d972d323.woff2",
+    "static/media/Revalia-Regular.woff2": "/Furniture-react-app/static/media/Revalia-Regular.12eec8bf8f01652dffd4.woff2",
+    "static/media/ABeeZee-Regular.woff2": "/Furniture-react-app/static/media/ABeeZee-Regular.e12e0a8227aca0672544.woff2",
+    "static/media/saaave.svg": "/Furniture-react-app/static/media/saaave.d5c5f0030410c93304a89d5d612b4bd5.svg",
+    "static/media/instageam.svg": "/Furniture-react-app/static/media/instageam.d2e9917e317756fc03df27f9cddf604c.svg",
+    "static/media/delevary.svg": "/Furniture-react-app/static/media/delevary.e681db926387ccbd3451b082a2dfa6c4.svg",
+    "static/media/twitter.svg": "/Furniture-react-app/static/media/twitter.d1f5029326aa3bf442a515961d83cac7.svg",
+    "index.html": "/Furniture-react-app/index.html",
+    "static/media/bestQuality (1).svg": "/Furniture-react-app/static/media/bestQuality (1).e259cad8782e52260526f9e9667267c0.svg",
+    "static/media/searchButton.svg": "/Furniture-react-app/static/media/searchButton.39d7ac177d45ffaf817a99938ca32787.svg",
+    "static/media/Search.svg": "/Furniture-react-app/static/media/Search.5a2b54c56ec75c508ebe9e063210e0e8.svg",
+    "static/media/facebook.svg": "/Furniture-react-app/static/media/facebook.85de8d444268ce3162850378b2f5f255.svg",
+    "static/media/Group 22.svg": "/Furniture-react-app/static/media/Group 22.e94584b6e2f012f025fdcad4c1cce5a6.svg",
+    "main.9cd98854.css.map": "/Furniture-react-app/static/css/main.9cd98854.css.map",
+    "main.331c6fd4.js.map": "/Furniture-react-app/static/js/main.331c6fd4.js.map",
+    "453.ed3810f9.chunk.js.map": "/Furniture-react-app/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9cd98854.css",
+    "static/js/main.331c6fd4.js"
+  ]
+}
