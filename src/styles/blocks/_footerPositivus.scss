@@ -55,8 +55,9 @@
   row-gap: 10px;
 }
 .footerPositivus__newsletter {
+  display: inline-flex;
   padding-bottom: 30px;
-
+  column-gap: 10px;
   &-input {
     @include reset-input;
     height: var(--input-height);

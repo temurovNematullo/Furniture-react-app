@@ -1,8 +1,12 @@
 import axios from "axios";
 import { Product } from "../types/Product";
+import { Reviews } from "../types/Reviews";
 
 const instance = axios.create({
   baseURL: "https://67ee6253c11d5ff4bf79633a.mockapi.io/",
+});
+const instance1 = axios.create({
+  baseURL: "https://67e53b7418194932a5852bae.mockapi.io/",
 });
 
 export const productsAPI = {
@@ -23,5 +27,18 @@ export const productsAPI = {
     return instance
       .get<Product[]>(`/products?${sortBy}=${groupValue}`)
       .then((response) => response.data);
+  },
+};
+
+export const userAPI = {
+  getUserReviews(limit: number, page: number) {
+    return instance1
+      .get<Reviews[]>("/reviews", {
+        params: {
+          limit: limit,
+          page: page,
+        },
+      })
+      .then((res) => res.data);
   },
 };

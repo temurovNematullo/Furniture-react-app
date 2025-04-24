@@ -1,3 +1,9 @@
+import phone from "../../assets/img/phone.svg";
+import instageam from "../../assets/img/instageam.svg";
+import email from "../../assets/img/email.svg";
+import twitter from "../../assets/img/twitter.svg";
+import facebook from "../../assets/img/facebook.svg";
+
 const Footer: React.FC = () => {
   return (
     <footer className="footerPositivus">
@@ -7,30 +13,30 @@ const Footer: React.FC = () => {
           <div className="footerPositivus-contacts">
             <div className="footerPositivus-contacts-phone">
               <div className="phoneContainer">
-                <img src="./assets/img/phone.svg" alt="" />
+                <img src={phone} alt="" />
               </div>
               <p>+1 234 567 890</p>
             </div>
             <div className="footerPositivus-contacts-email">
               <div className="emailConteiner">
-                <img src="./assets/img/email.svg" alt="" />
+                <img src={email} alt="" />
               </div>
               <p>uiuxmdomith@gmail.com</p>
             </div>
           </div>
           <div className="footerPositivus__container-icons">
             <img
-              src="./assets/img/facebook.svg"
+              src={facebook}
               alt=""
               className="footerPositivus__container-facebook"
             />
             <img
-              src="./assets/img/instageam.svg"
+              src={instageam}
               alt=""
               className="footerPositivus__container-instagram"
             />
             <img
-              src="./assets/img/twitter.svg"
+              src={twitter}
               alt=""
               className="footerPositivus__container-twitter"
             />
