@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/Furniture-react-app/static/css/main.2a5331fb.css",
-    "main.js": "/Furniture-react-app/static/js/main.6e9d4410.js",
+    "main.css": "/Furniture-react-app/static/css/main.6b2653e1.css",
+    "main.js": "/Furniture-react-app/static/js/main.c8381ca3.js",
     "static/js/453.ed3810f9.chunk.js": "/Furniture-react-app/static/js/453.ed3810f9.chunk.js",
     "static/media/Mask_Group.svg": "/Furniture-react-app/static/media/Mask_Group.9be01fb2180aa2cbda62.svg",
-    "static/media/User1Avatar.svg": "/Furniture-react-app/static/media/User1Avatar.576e3cf137035175962f4d22276ed73c.svg",
     "static/media/aboutUsImg.svg": "/Furniture-react-app/static/media/aboutUsImg.4455b0c93448e5c250186b3a6568e44e.svg",
     "static/media/Alibaba_logo_PNG4 1.svg": "/Furniture-react-app/static/media/Alibaba_logo_PNG4 1.9ed14e57062903b41f31d3aad0a832cd.svg",
     "static/media/RobotoCondensed-Bold.woff2": "/Furniture-react-app/static/media/RobotoCondensed-Bold.82520aaa568a69ebf412.woff2",
@@ -26,12 +25,12 @@
     "static/media/Search.svg": "/Furniture-react-app/static/media/Search.5a2b54c56ec75c508ebe9e063210e0e8.svg",
     "static/media/facebook.svg": "/Furniture-react-app/static/media/facebook.85de8d444268ce3162850378b2f5f255.svg",
     "static/media/Group 22.svg": "/Furniture-react-app/static/media/Group 22.e94584b6e2f012f025fdcad4c1cce5a6.svg",
-    "main.2a5331fb.css.map": "/Furniture-react-app/static/css/main.2a5331fb.css.map",
-    "main.6e9d4410.js.map": "/Furniture-react-app/static/js/main.6e9d4410.js.map",
+    "main.6b2653e1.css.map": "/Furniture-react-app/static/css/main.6b2653e1.css.map",
+    "main.c8381ca3.js.map": "/Furniture-react-app/static/js/main.c8381ca3.js.map",
     "453.ed3810f9.chunk.js.map": "/Furniture-react-app/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a5331fb.css",
-    "static/js/main.6e9d4410.js"
+    "static/css/main.6b2653e1.css",
+    "static/js/main.c8381ca3.js"
   ]
 }
