@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import reviewStar from "../../assets/img/reviewsStar.svg";
 import {
   fetchUserReviews,
   updatePage,
@@ -8,14 +9,6 @@ import {
 const ClientReviewsSection: React.FC = () => {
   const { reviews, error, page } = useAppSelector((state) => state.reviews);
   const dispatch = useAppDispatch();
-  // const stars = Array.from({ length: 5 }, (_, index) => (
-  //     <img
-  //       key={index}
-  //       src="./assets/img/reviewsStar.svg"
-  //       alt=""
-  //       className="About_us_icon"
-  //     />
-  //   ));
 
   useEffect(() => {
     dispatch(fetchUserReviews());
@@ -58,21 +51,16 @@ const ClientReviewsSection: React.FC = () => {
                 </div>
 
                 <div className="client__Reviews-starsContainer">
-                  <img
-                    src="./assets/img/reviewsStar.svg"
-                    alt=""
-                    className="About_us_icon"
-                  />
-                  <img
-                    src="./assets/img/reviewsStar.svg"
-                    alt=""
-                    className="About_us_icon"
-                  />
-                  <img
-                    src="./assets/img/reviewsStar.svg"
-                    alt=""
-                    className="About_us_icon"
-                  />
+                  {Array(review?.rating)
+                    .fill(0)
+                    .map((_, i) => (
+                      <img
+                        key={i}
+                        src={reviewStar}
+                        alt=""
+                        className="About_us_icon"
+                      />
+                    ))}
                 </div>
               </div>
             </div>

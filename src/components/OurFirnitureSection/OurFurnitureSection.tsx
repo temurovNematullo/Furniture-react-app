@@ -1,33 +1,49 @@
 import search from "../../assets/img/searchButton.svg";
 import { NavLink } from "react-router-dom";
+import debounce from "lodash.debounce";
 import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { fetchSearchResults } from "../../reduxTK/slices/productSlice";
+
 import {
   fetchProducts,
   fetchAllProducts,
 } from "../../reduxTK/slices/productSlice";
 
 const FurnitureSection: React.FC = () => {
-  const { products } = useAppSelector((state) => state.products);
-  const { status } = useAppSelector((state) => state.products);
+  const dispatch = useAppDispatch();
+  const { products, status } = useAppSelector((state) => state.products);
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category") || "";
+  const [searchValue, setSearchValue] = useState<string>("");
 
-  const dispatch = useAppDispatch();
-  console.log(products);
+  const furnitureSearch = () => {
+    if (searchValue.length === 0) {
+      return;
+    } else {
+      dispatch(fetchSearchResults(searchValue));
+      setSearchValue("");
+    }
+  };
+
+  const handleChange = (value: string) => {
+    const valueSearch = value.trim();
+
+    setSearchValue(valueSearch);
+  };
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
 
-  useMemo(() => {
+  useEffect(() => {
     if (category === "all") {
       dispatch(fetchAllProducts({ sortBy: "", groupValue: "all" }));
     } else {
       dispatch(fetchAllProducts({ sortBy: "group", groupValue: category }));
     }
-  }, [category]);
+  }, [category, dispatch]);
 
   return (
     <section className="Furniture container ">
@@ -43,11 +59,18 @@ const FurnitureSection: React.FC = () => {
         <div className="SortList__container-search">
           <input
             type="text"
+            value={searchValue}
             placeholder="Search a furniture"
             className="SortList__container-input"
+            onChange={(e) => handleChange(e.target.value)}
           />
           <button className="SortList__container-button" title="Search">
-            <img src={search} alt="" className="searchIcon" />
+            <img
+              src={search}
+              alt=""
+              className="searchIcon"
+              onClick={furnitureSearch}
+            />
           </button>
         </div>
         <div className="SortList__container-nav">
@@ -132,4 +155,5 @@ const FurnitureSection: React.FC = () => {
     </section>
   );
 };
+
 export default FurnitureSection;

@@ -1,7 +1,7 @@
 import { RootState } from "../store";
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { Product } from "../../types/Product";
-import { productsAPI } from "../../api/API"; // Adjust the path as needed
+import { productsAPI, searchAPI } from "../../api/API"; // Adjust the path as needed
 
 interface ProductsState {
   products: Product[];
@@ -53,6 +53,7 @@ export const fetchAllProducts = createAsyncThunk<
 >("products/fetchAllProducts", async ({ sortBy, groupValue }, { dispatch }) => {
   try {
     const data = await productsAPI.getAllProduct(sortBy, groupValue);
+
     if (!data) {
       throw new Error("Failed to fetch products");
     }
@@ -62,6 +63,28 @@ export const fetchAllProducts = createAsyncThunk<
     throw error;
   }
 });
+
+export const fetchSearchResults = createAsyncThunk<
+  Product[],
+  string,
+  { rejectValue: string }
+>(
+  "products/fetchSearchResults",
+  async (value: string, { rejectWithValue, dispatch }) => {
+    try {
+      const searchData = await searchAPI.searchFurniture(value);
+      dispatch(setProducts(searchData)); // Dispatch the action to set the products in the state
+      console.log(searchData);
+      if (!searchData) {
+        return rejectWithValue("No search results found");
+      }
+      return searchData;
+    } catch (error) {
+      console.error("error", error);
+      return rejectWithValue("Failed to fetch search results");
+    }
+  }
+);
 
 export const { setProducts } = productsSlice.actions;
 export default productsSlice.reducer;

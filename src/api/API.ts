@@ -42,3 +42,11 @@ export const userAPI = {
       .then((res) => res.data);
   },
 };
+
+export const searchAPI = {
+  searchFurniture(value: string) {
+    return instance
+      .get<Product[]>(`/products?title=${value}`)
+      .then((res) => res.data);
+  },
+};

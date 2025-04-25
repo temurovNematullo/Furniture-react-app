@@ -48,6 +48,7 @@
 .client__Reviews-Info {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   row-gap: 20px;
 }
 .client__Reviews-textContainer-title {
