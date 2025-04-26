@@ -5,6 +5,7 @@ import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { fetchSearchResults } from "../../reduxTK/slices/productSlice";
+import CardSkeleton from "../Loader/loader";
 
 import {
   fetchProducts,
@@ -40,7 +41,7 @@ const FurnitureSection: React.FC = () => {
   useEffect(() => {
     if (category === "all") {
       dispatch(fetchAllProducts({ sortBy: "", groupValue: "all" }));
-    } else {
+    } else if (category.length !== 0) {
       dispatch(fetchAllProducts({ sortBy: "group", groupValue: category }));
     }
   }, [category, dispatch]);
@@ -126,21 +127,25 @@ const FurnitureSection: React.FC = () => {
         </div>
       </div>
       <div className="cardConteiner">
-        {products.map((product) => (
-          <div className="cardConteiner-cardProduct">
-            <div className="cardProduct_img">
-              <img src={product.image} alt="" />
-            </div>
-            <div className="cardProduct_Info">
-              <h3>{product.title}</h3>
-              <h3>${product.price}</h3>
-            </div>
-            <div className="cardProduct_text">
-              <span>{product.about}</span>
-              <button className="cardProduct_button">Order Now</button>
-            </div>
-          </div>
-        ))}
+        {products.length === 0
+          ? Array(8)
+              .fill(0)
+              .map((_, index) => <CardSkeleton key={index} />)
+          : products.map((product, index) => (
+              <div className="cardConteiner-cardProduct" key={index}>
+                <div className="cardProduct_img">
+                  <img src={product.image} alt="" />
+                </div>
+                <div className="cardProduct_Info">
+                  <h3>{product.title}</h3>
+                  <h3>${product.price}</h3>
+                </div>
+                <div className="cardProduct_text">
+                  <span>{product.about}</span>
+                  <button className="cardProduct_button">Order Now</button>
+                </div>
+              </div>
+            ))}
       </div>
       <div className="view__Conteiner">
         <button

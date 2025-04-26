@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import reviewStar from "../../assets/img/reviewsStar.svg";
+import ReviewsLoader from "../Loader/reviewsLoader";
 import {
   fetchUserReviews,
   updatePage,
@@ -34,38 +35,45 @@ const ClientReviewsSection: React.FC = () => {
         >
           {"<"}
         </button>
-        {reviews.map((review) => (
-          <div className="client__Reviews-content">
-            <div className="client__Reviews-textContainer">
-              <div className="client__Reviews-Avatar">
-                <img src={review.userAvatar} alt="" />
-              </div>
-              <div className="client__Reviews-Info">
-                <div className="client__Reviews-UserName">
-                  {review.userName}
-                  <div className="client__Reviews-Date">{review.createdAt}</div>
-                </div>
+        {reviews.length === 0
+          ? Array(2)
+              .fill(0)
+              .map((_, i) => <ReviewsLoader key={i} />)
+          : reviews.map((review) => (
+              <div className="client__Reviews-content" key={review.id}>
+                <div className="client__Reviews-textContainer">
+                  <div className="client__Reviews-Avatar">
+                    <img src={review.userAvatar} alt="" />
+                  </div>
+                  <div className="client__Reviews-Info">
+                    <div className="client__Reviews-UserName">
+                      {review.userName}
+                      <div className="client__Reviews-Date">
+                        {review.createdAt}
+                      </div>
+                    </div>
 
-                <div className="client__Reviews-textContainer-title">
-                  <p>{review.review}</p>
-                </div>
+                    <div className="client__Reviews-textContainer-title">
+                      <p>{review.review}</p>
+                    </div>
 
-                <div className="client__Reviews-starsContainer">
-                  {Array(review?.rating)
-                    .fill(0)
-                    .map((_, i) => (
-                      <img
-                        key={i}
-                        src={reviewStar}
-                        alt=""
-                        className="About_us_icon"
-                      />
-                    ))}
+                    <div className="client__Reviews-starsContainer">
+                      {Array(review?.rating)
+                        .fill(0)
+                        .map((_, i) => (
+                          <img
+                            key={i}
+                            src={reviewStar}
+                            alt=""
+                            className="About_us_icon"
+                          />
+                        ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        ))}
+            ))}
+
         <button
           className="reviews__prevButton hidden-mobile"
           title="Next Review"
