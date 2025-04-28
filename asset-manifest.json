@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Furniture-react-app/static/css/main.900c3e61.css",
-    "main.js": "/Furniture-react-app/static/js/main.7b7050bb.js",
+    "main.css": "/Furniture-react-app/static/css/main.025cd06d.css",
+    "main.js": "/Furniture-react-app/static/js/main.b5ad4ffe.js",
     "static/js/453.ed3810f9.chunk.js": "/Furniture-react-app/static/js/453.ed3810f9.chunk.js",
     "static/media/Mask_Group.svg": "/Furniture-react-app/static/media/Mask_Group.9be01fb2180aa2cbda62.svg",
     "static/media/aboutUsImg.svg": "/Furniture-react-app/static/media/aboutUsImg.4455b0c93448e5c250186b3a6568e44e.svg",
@@ -26,12 +26,12 @@
     "static/media/facebook.svg": "/Furniture-react-app/static/media/facebook.85de8d444268ce3162850378b2f5f255.svg",
     "static/media/Group 22.svg": "/Furniture-react-app/static/media/Group 22.e94584b6e2f012f025fdcad4c1cce5a6.svg",
     "static/media/reviewsStar.svg": "/Furniture-react-app/static/media/reviewsStar.508a810ee30e0b4e002d78d049693e52.svg",
-    "main.900c3e61.css.map": "/Furniture-react-app/static/css/main.900c3e61.css.map",
-    "main.7b7050bb.js.map": "/Furniture-react-app/static/js/main.7b7050bb.js.map",
+    "main.025cd06d.css.map": "/Furniture-react-app/static/css/main.025cd06d.css.map",
+    "main.b5ad4ffe.js.map": "/Furniture-react-app/static/js/main.b5ad4ffe.js.map",
     "453.ed3810f9.chunk.js.map": "/Furniture-react-app/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.900c3e61.css",
-    "static/js/main.7b7050bb.js"
+    "static/css/main.025cd06d.css",
+    "static/js/main.b5ad4ffe.js"
   ]
 }
