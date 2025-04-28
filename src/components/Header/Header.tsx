@@ -1,6 +1,13 @@
 import search from "../../assets/img/Search.svg";
+import { NavLink } from "react-router-dom";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  handleScroll: () => void; // Тип для функции без параметров
+  // или, если функция принимает параметры:
+  // handleScroll: (param: type) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ handleScroll }) => {
   return (
     <nav className="header__menu">
       <div className="header__logo logo">
@@ -8,24 +15,28 @@ const Header: React.FC = () => {
       </div>
       <ul className="header__menu-list hidden-mobile">
         <li className="header__menu-item">
-          <a className="header__menu-link" href="#home">
+          <NavLink className="header__menu-link" to="/home">
             Home
-          </a>
+          </NavLink>
         </li>
         <li className="header__menu-item">
-          <a className="header__menu-link" href="#about">
+          <NavLink className="header__menu-link" to="/about">
             About
-          </a>
+          </NavLink>
         </li>
         <li className="header__menu-item">
-          <a className="header__menu-link" href="#services">
+          <NavLink className="header__menu-link" to="/services">
             Services
-          </a>
+          </NavLink>
         </li>
         <li className="header__menu-item">
-          <a className="header__menu-link" href="#contact">
+          <NavLink
+            onClick={handleScroll}
+            className="header__menu-link"
+            to="/furninure"
+          >
             Furniture
-          </a>
+          </NavLink>
         </li>
       </ul>
       <button className="header__menu-button hidden-mobile" type="button">

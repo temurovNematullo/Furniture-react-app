@@ -1,12 +1,16 @@
 import axios from "axios";
 import { Product } from "../types/Product";
 import { Reviews } from "../types/Reviews";
+import { LoginFormInputs } from "../types/Auth";
 
 const instance = axios.create({
   baseURL: "https://67ee6253c11d5ff4bf79633a.mockapi.io/",
 });
 const instance1 = axios.create({
   baseURL: "https://67e53b7418194932a5852bae.mockapi.io/",
+});
+const instance2 = axios.create({
+  baseURL: "https://67d7fa0c9d5e3a10152cd996.mockapi.io/",
 });
 
 export const productsAPI = {
@@ -40,6 +44,14 @@ export const userAPI = {
         },
       })
       .then((res) => res.data);
+  },
+  authUser(data: LoginFormInputs) {
+    return instance2
+      .post<{ fakeToken: string }>("/usersAuth", {
+        ...data,
+        fakeToken: "some-fake-token-" + Date.now(),
+      })
+      .then((res) => res.data.fakeToken);
   },
 };
 

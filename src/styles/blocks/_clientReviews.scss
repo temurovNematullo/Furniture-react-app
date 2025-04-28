@@ -59,15 +59,19 @@
   @include reviewsButton(right, 0%);
   inset-block: 50%;
   transform: translateY(-50%);
-  &:disabled {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    color: var(--color-gray);
-  }
+
   @include hover {
     background: var(--color-light-gray-alt);
     color: var(--color-dark);
     box-shadow: 0 0 10px 5px var(--color-light-gray-alt);
+  }
+
+  &:disabled {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    color: var(--color-gray);
+    cursor: not-allowed;
+    pointer-events: none;
   }
 }
 
@@ -75,15 +79,19 @@
   @include reviewsButton(left, 0%);
   inset-block: 50%;
   transform: translateY(-50%);
-  &:disabled {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    color: var(--color-gray);
-  }
 
   @include hover {
     background: var(--color-light-gray-alt);
     color: var(--color-dark);
     box-shadow: 0 0 10px 5px var(--color-light-gray-alt);
+  }
+
+  &:disabled {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    color: var(--color-gray);
+    cursor: not-allowed;
+
+    pointer-events: none;
   }
 }
