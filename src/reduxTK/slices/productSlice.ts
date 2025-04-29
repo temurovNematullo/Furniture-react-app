@@ -27,25 +27,44 @@ const productsSlice = createSlice({
       state.products = action.payload;
     },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchProducts.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(
+        fetchProducts.fulfilled,
+        (state, action: PayloadAction<Product[]>) => {
+          state.status = "succeeded";
+          state.products = action.payload;
+        }
+      )
+      .addCase(fetchProducts.rejected, (state) => {
+        state.status = "error";
+      });
+  },
 });
 
 export const fetchProducts = createAsyncThunk<
   Product[],
   void,
-  { state: RootState }
->("products/fetchProducts", async (_, { dispatch, getState }) => {
-  try {
-    const { page, limit } = getState().products; // Получаем текущие значения page и limit из состояния
-    const data = await productsAPI.getProducts(page, limit); // Передаем их в API
-    if (!data) {
-      throw new Error("Failed to fetch products");
+  { rejectValue: string; state: RootState }
+>(
+  "products/fetchProducts",
+  async (_, { dispatch, getState, rejectWithValue }) => {
+    try {
+      const { page, limit } = getState().products; // Получаем текущие значения page и limit из состояния
+      const data = await productsAPI.getProducts(page, limit); // Передаем их в API
+      if (!data) {
+        throw new Error("Failed to fetch products");
+      }
+      dispatch(setProducts(data));
+      return data; // Убедитесь, что функция возвращает полученные данные
+    } catch (error) {
+      return rejectWithValue("Failed to fetch search results");
     }
-    dispatch(setProducts(data));
-    return data; // Убедитесь, что функция возвращает полученные данные
-  } catch (error) {
-    throw error;
   }
-});
+);
 
 export const fetchAllProducts = createAsyncThunk<
   Product[],

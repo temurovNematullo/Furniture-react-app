@@ -2,6 +2,7 @@ import { RootState } from "./../store";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Reviews } from "../../types/Reviews";
 import { userAPI } from "../../api/API";
+import { ApiThunkConfig } from "../../types/ThunkType";
 
 interface ReviewsState {
   reviews: Reviews[];
@@ -47,20 +48,25 @@ export const userReviewsSlice = createSlice({
         fetchUserReviews.fulfilled,
         (state, action: PayloadAction<Reviews[]>) => {
           state.status = "succeeded";
-          state.reviews = action.payload;
+          state.reviews = action.payload; // ✅ TS уже знает, что это Reviews[] но на всякий случай указал еще раз обычно так ненадо наверное )
         }
       )
       .addCase(fetchUserReviews.rejected, (state, action) => {
         state.status = "error";
-        state.error = action.payload as string;
+        state.error = action.payload ?? "Unknown error";
       });
   },
 });
 
+type FetchUserReviewsThunk = ApiThunkConfig<Reviews[]>; ///fix Для общего типа 'ApiThunkConfig' требуется от 1 до 3 аргументов типа.
+
 export const fetchUserReviews = createAsyncThunk<
-  Reviews[],
-  void,
-  { rejectValue: string; state: RootState }
+  FetchUserReviewsThunk["fulfilled"],
+  FetchUserReviewsThunk["arg"],
+  {
+    rejectValue: FetchUserReviewsThunk["rejected"];
+    state: FetchUserReviewsThunk["state"];
+  }
 >("userReviews/fetchUserReviews", async (_, { rejectWithValue, getState }) => {
   try {
     const { limit, page } = getState().reviews;
