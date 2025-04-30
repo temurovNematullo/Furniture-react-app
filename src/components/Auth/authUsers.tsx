@@ -28,10 +28,10 @@ const LoginForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <input
         type="email"
-        {...register("email", { required: true })}
+        {...register("email", { required: "Email обязателен" })}
         placeholder="Email"
       />
-      {errors.email && <span>Email обязателен</span>}
+      {errors.email && <span>{errors.email.message}</span>}
 
       <input
         {...register("password", { required: true })}

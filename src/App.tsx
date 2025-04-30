@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import MainSection from "./components/MainSection/MainSection";
 import AboutUsSection from "./components/AboutUsSection/AboutUsSection";
@@ -7,6 +8,8 @@ import FurnitureSection from "./components/OurFirnitureSection/OurFurnitureSecti
 import ClientReviewsSection from "./components/ClientREviewsSection/ClientReviewsSection";
 import Footer from "./components/Footer/Footer";
 import LoginForm from "./components/Auth/authUsers";
+import UserForm from "./components/UserForm/userForm";
+import UserFormWithoutZod from "./components/UserForm/UserFormwithoutZod";
 import { setToken } from "./reduxTK/slices/authSlice";
 import "./styles/styles.scss";
 import { useAppDispatch } from "./hooks/hooks";
@@ -27,8 +30,10 @@ function App() {
 
   return (
     <div className="App">
+      <Routes>
+        <Route path="/home" element={<UserFormWithoutZod />} />
+      </Routes>
       <Header handleScroll={handleScrollToComponent} />
-      {/* <LoginForm /> */}
       <MainSection />
       <AboutUsSection />
       <ServiceSection />
